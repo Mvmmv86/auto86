@@ -1,47 +1,18 @@
-[YT API] channels retornou 403: {
-  "error": {
-    "code": 403,
-    "message": "Requests to this API youtube method youtube.api.v3.V3DataChannelService.List are blocked.",
-    "errors": [
-      {
-        "message": "Requests to this
-[YT API] channels retornou 403: {
-  "error": {
-    "code": 403,
-    "message": "Requests to this API youtube method youtube.api.v3.V3DataChannelService.List are blocked.",
-    "errors": [
-      {
-        "message": "Requests to this
-[YT API] channels retornou 403: {
-  "error": {
-    "code": 403,
-    "message": "Requests to this API youtube method youtube.api.v3.V3DataChannelService.List are blocked.",
-    "errors": [
-      {
-        "message": "Requests to this
-[YT API] channels retornou 403: {
-  "error": {
-    "code": 403,
-    "message": "Requests to this API youtube method youtube.api.v3.V3DataChannelService.List are blocked.",
-    "errors": [
-      {
-        "message": "Requests to this
-[YT API] channels retornou 403: {
-  "error": {
-    "code": 403,
-    "message": "Requests to this API youtube method youtube.api.v3.V3DataChannelService.List are blocked.",
-    "errors": [
-      {
-        "message": "Requests to this
-❌ Nenhum dado coletado.
 🚀 Modo force — rodando independente da hora.
 🔍 Resolvendo @CoinBureau...
-   ⚠️  Canal @CoinBureau não encontrado.
+   ✓ Coin Bureau: 1 vídeo(s) (últimas 24h)
 🔍 Resolvendo @AltcoinDaily...
-   ⚠️  Canal @AltcoinDaily não encontrado.
+   ✓ Altcoin Daily: 2 vídeo(s) (últimas 24h)
 🔍 Resolvendo @IntoTheCryptoverse...
-   ⚠️  Canal @IntoTheCryptoverse não encontrado.
+   ✓ Benjamin Cowen: 1 vídeo(s) (últimas 24h)
 🔍 Resolvendo @cryptobantergroup...
-   ⚠️  Canal @cryptobantergroup não encontrado.
+   ✓ Crypto Banter: 3 vídeo(s) (últimas 24h)
 🔍 Resolvendo @DataDash...
-   ⚠️  Canal @DataDash não encontrado.
+   ✓ DataDash: 1 vídeo(s) (últimas 24h)
+📤 Enviando email...
+   from: onboarding@resend.dev
+   to:   marcusvmoraes86@gmail.com
+   HTTP 200
+   Body: {"id":"1c0644f2-05eb-41f4-ad2a-107e1dfb2a5a"}
+✅ Email enviado para marcusvmoraes86@gmail.com.
+EXIT_CODE=0
