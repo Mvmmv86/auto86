@@ -2,7 +2,6 @@ name: Relatório Diário Cripto
 
 on:
   schedule:
-    # Roda toda hora UTC. O script só envia email se for o horário de pico configurado.
     - cron: "0 * * * *"
   workflow_dispatch:
     inputs:
@@ -14,6 +13,8 @@ on:
 jobs:
   send-report:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
 
@@ -26,10 +27,29 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Rodar relatório
+        id: run
+        continue-on-error: true
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           RESEND_API_KEY:  ${{ secrets.RESEND_API_KEY }}
           SENDER_EMAIL:    ${{ secrets.SENDER_EMAIL }}
           RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
           RUN_MODE: ${{ github.event.inputs.force == 'true' && 'force' || 'check' }}
-        run: python crypto_daily_report.py
+        run: |
+          mkdir -p logs
+          set -o pipefail
+          python crypto_daily_report.py 2>&1 | tee logs/last_run.log
+          echo "EXIT_CODE=$?" >> logs/last_run.log
+
+      - name: Commitar log
+        if: always()
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add logs/
+          git diff --cached --quiet || git commit -m "log: relatório diário [skip ci]"
+          git push || true
+
+      - name: Falhar se script falhou
+        if: steps.run.outcome == 'failure'
+        run: exit 1
