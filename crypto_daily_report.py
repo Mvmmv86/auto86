@@ -11,7 +11,6 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import requests
-import resend
 
 
 # ---------- Configuração ----------
@@ -287,16 +286,36 @@ def build_html_report(channels_data, window_label):
 
 # ---------- Envio ----------
 def send_email(html_content):
+    """Envia via API HTTP do Resend diretamente — mais simples de debugar que SDK."""
     if not RESEND_API_KEY:
         raise RuntimeError("RESEND_API_KEY não configurada.")
-    resend.api_key = RESEND_API_KEY
-    resp = resend.Emails.send({
-        "from":    SENDER_EMAIL,
-        "to":      [RECIPIENT_EMAIL],
-        "subject": f"🚀 Top Cripto YouTube — {datetime.now().strftime('%d/%m/%Y')}",
-        "html":    html_content,
-    })
-    print(f"✅ Email enviado para {RECIPIENT_EMAIL}. ID: {resp.get('id')}")
+
+    print(f"📤 Enviando email...")
+    print(f"   from: {SENDER_EMAIL}")
+    print(f"   to:   {RECIPIENT_EMAIL}")
+
+    r = requests.post(
+        "https://api.resend.com/emails",
+        headers={
+            "Authorization": f"Bearer {RESEND_API_KEY}",
+            "Content-Type":  "application/json",
+        },
+        json={
+            "from":    SENDER_EMAIL,
+            "to":      [RECIPIENT_EMAIL],
+            "subject": f"🚀 Top Cripto YouTube — {datetime.now().strftime('%d/%m/%Y')}",
+            "html":    html_content,
+        },
+        timeout=30,
+    )
+
+    print(f"   HTTP {r.status_code}")
+    print(f"   Body: {r.text[:500]}")
+
+    if r.status_code >= 400:
+        raise RuntimeError(f"Resend falhou ({r.status_code}): {r.text[:300]}")
+
+    print(f"✅ Email enviado para {RECIPIENT_EMAIL}.")
 
 
 # ---------- Peak hour gate ----------

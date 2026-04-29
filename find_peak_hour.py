@@ -19,7 +19,7 @@ from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 
-import resend
+import requests
 
 from crypto_daily_report import (
     TOP_CRYPTO_HANDLES,
@@ -208,14 +208,26 @@ def send_summary(html_content):
     if not RESEND_API_KEY:
         print("⚠️  RESEND_API_KEY ausente — pulando envio.", file=sys.stderr)
         return
-    resend.api_key = RESEND_API_KEY
-    resp = resend.Emails.send({
-        "from":    SENDER_EMAIL,
-        "to":      [RECIPIENT_EMAIL],
-        "subject": f"📊 Análise Semanal Cripto — {datetime.now().strftime('%d/%m/%Y')}",
-        "html":    html_content,
-    })
-    print(f"✅ Email semanal enviado. ID: {resp.get('id')}")
+
+    print(f"📤 Enviando email semanal para {RECIPIENT_EMAIL}...")
+    r = requests.post(
+        "https://api.resend.com/emails",
+        headers={
+            "Authorization": f"Bearer {RESEND_API_KEY}",
+            "Content-Type":  "application/json",
+        },
+        json={
+            "from":    SENDER_EMAIL,
+            "to":      [RECIPIENT_EMAIL],
+            "subject": f"📊 Análise Semanal Cripto — {datetime.now().strftime('%d/%m/%Y')}",
+            "html":    html_content,
+        },
+        timeout=30,
+    )
+    print(f"   HTTP {r.status_code} | {r.text[:300]}")
+    if r.status_code >= 400:
+        raise RuntimeError(f"Resend falhou: {r.text[:300]}")
+    print(f"✅ Email semanal enviado.")
 
 
 def main():
