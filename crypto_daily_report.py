@@ -34,7 +34,7 @@ TOP_CRYPTO_HANDLES = [
     "@CoinBureau",
     "@AltcoinDaily",
     "@IntoTheCryptoverse",   # Benjamin Cowen
-    "@CryptoBanter",
+    "@cryptobantergroup",    # Crypto Banter
     "@DataDash",
 ]
 
