@@ -13,6 +13,6 @@
    from: onboarding@resend.dev
    to:   marcusvmoraes86@gmail.com
    HTTP 200
-   Body: {"id":"1c0644f2-05eb-41f4-ad2a-107e1dfb2a5a"}
+   Body: {"id":"7aa50761-3629-4a07-85db-b43edc1bc049"}
 ✅ Email enviado para marcusvmoraes86@gmail.com.
 EXIT_CODE=0
