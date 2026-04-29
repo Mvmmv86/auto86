@@ -1,0 +1,43 @@
+name: Análise Semanal de Pico
+
+on:
+  schedule:
+    # Todo domingo às 11:00 UTC (08:00 BRT) — pra você receber o resumo semanal de manhã
+    - cron: "0 11 * * 0"
+  workflow_dispatch:
+
+jobs:
+  analyze-peak:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # precisa pra commitar peak_hour.txt
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependências
+        run: pip install -r requirements.txt
+
+      - name: Analisar horário de pico e enviar resumo
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          RESEND_API_KEY:  ${{ secrets.RESEND_API_KEY }}
+          SENDER_EMAIL:    ${{ secrets.SENDER_EMAIL }}
+          RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
+        run: python find_peak_hour.py
+
+      - name: Commit do peak_hour atualizado
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet peak_hour.txt; then
+            echo "Sem mudanças no peak_hour."
+          else
+            git add peak_hour.txt
+            git commit -m "chore: atualiza peak_hour após análise semanal"
+            git push
+          fi
