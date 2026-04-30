@@ -22,6 +22,7 @@ RECIPIENT_EMAIL = os.environ.get("RECIPIENT_EMAIL", "marcusvmoraes86@gmail.com")
 # Modo de execução: "check" (só envia se for hora de pico) ou "force" (envia sempre)
 RUN_MODE = os.environ.get("RUN_MODE", "check")
 PEAK_FILE = Path(__file__).parent / "peak_hour.txt"
+SENT_FILE = Path(__file__).parent / "last_sent.txt"
 
 # Janela de busca: últimas 24h (relatório diário) com fallback de 7 dias
 DAILY_WINDOW_HOURS   = 24
@@ -327,19 +328,48 @@ def read_peak_hour():
         return 16
 
 
+def read_last_sent_date():
+    """Retorna a data UTC (YYYY-MM-DD) do último envio bem-sucedido, ou None."""
+    try:
+        return SENT_FILE.read_text().strip() or None
+    except FileNotFoundError:
+        return None
+
+
+def mark_sent_today():
+    """Marca que enviou hoje (UTC)."""
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    SENT_FILE.write_text(today + "\n")
+    print(f"📝 Marcado como enviado: {today}")
+
+
 def should_run_now():
-    """Decide se é hora de rodar baseado em RUN_MODE e peak_hour."""
+    """
+    Lógica robusta:
+    - Modo force: sempre roda
+    - Senão: roda se hora_atual >= pico AND não enviou hoje
+    Resolve o problema do GitHub Actions pular slots de cron.
+    """
     if RUN_MODE == "force":
         print("🚀 Modo force — rodando independente da hora.")
         return True
 
-    peak_hour = read_peak_hour()
-    current_hour = datetime.now(timezone.utc).hour
-    if current_hour == peak_hour:
-        print(f"⏰ Hora de pico ({peak_hour:02d}:00 UTC) — rodando relatório.")
-        return True
-    print(f"⏭️  Não é hora de pico (atual: {current_hour:02d}:00 UTC, pico: {peak_hour:02d}:00 UTC). Saindo.")
-    return False
+    peak_hour    = read_peak_hour()
+    now_utc      = datetime.now(timezone.utc)
+    current_hour = now_utc.hour
+    today        = now_utc.strftime("%Y-%m-%d")
+    last_sent    = read_last_sent_date()
+
+    if last_sent == today:
+        print(f"⏭️  Já enviado hoje ({today}). Saindo.")
+        return False
+
+    if current_hour < peak_hour:
+        print(f"⏭️  Antes do pico (atual: {current_hour:02d}:00 UTC, pico: {peak_hour:02d}:00 UTC). Aguardando.")
+        return False
+
+    print(f"⏰ Janela aberta (atual: {current_hour:02d}:00 UTC ≥ pico: {peak_hour:02d}:00 UTC) e ainda não enviou hoje. Rodando.")
+    return True
 
 
 # ---------- Main ----------
@@ -407,6 +437,10 @@ def main():
     window_label = f"Últimas {DAILY_WINDOW_HOURS}h" if total_videos_24h > 0 else f"Últimos vídeos publicados"
     html_content = build_html_report(channels_data, window_label)
     send_email(html_content)
+
+    # Marca como enviado pra não duplicar (só em modo check; force permite re-testar)
+    if RUN_MODE != "force":
+        mark_sent_today()
 
 
 if __name__ == "__main__":
