@@ -56,10 +56,13 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git pull --rebase origin main || true
+          # 1. Commita mudanças locais primeiro (não deixa pull sobrescrever)
           git add logs/ last_sent.txt 2>/dev/null || true
-          git diff --cached --quiet || git commit -m "log: relatório diário [skip ci]"
-          git push || true
+          git diff --cached --quiet && echo "Nada pra commitar" || git commit -m "log: relatório diário [skip ci]"
+          # 2. Rebase em cima do remoto pra evitar conflito de push
+          git pull --rebase origin main || true
+          # 3. Push com retry
+          for i in 1 2 3; do git push && break || sleep 5; done
 
       - name: Falhar se script falhou
         if: steps.run.outcome == 'failure'
