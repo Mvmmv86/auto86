@@ -1,2 +1,25 @@
-⏭️  Não é hora de pico (atual: 01:00 UTC, pico: 16:00 UTC). Saindo.
-EXIT_CODE=0
+=== AMBIENTE ===
+Data UTC: Thu Apr 30 03:27:40 UTC 2026
+RUN_MODE: force
+Event:    workflow_dispatch
+Force in: true
+SHA:      3be3804c36de0f5979a6e4a8fba73d4d3b5dbd41
+=== EXECUÇÃO ===
+🚀 Modo force — rodando independente da hora.
+🔍 Resolvendo @CoinBureau...
+   ✓ Coin Bureau: 1 vídeo(s) (últimas 24h)
+🔍 Resolvendo @AltcoinDaily...
+   ✓ Altcoin Daily: 1 vídeo(s) (últimas 24h)
+🔍 Resolvendo @IntoTheCryptoverse...
+   ✓ Benjamin Cowen: 2 vídeo(s) (últimas 24h)
+🔍 Resolvendo @cryptobantergroup...
+   ✓ Crypto Banter: 3 vídeo(s) (últimas 24h)
+🔍 Resolvendo @DataDash...
+   ✓ DataDash: 5 vídeo(s) (vídeos mais recentes)
+📤 Enviando email...
+   from: onboarding@resend.dev
+   to:   marcusvmoraes86@gmail.com
+   HTTP 200
+   Body: {"id":"468a7757-f5de-4ac4-9de7-7f062aef9fe3"}
+✅ Email enviado para marcusvmoraes86@gmail.com.
+=== EXIT_CODE=0 ===
