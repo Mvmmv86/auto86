@@ -37,9 +37,19 @@ jobs:
           RUN_MODE: ${{ github.event.inputs.force == 'true' && 'force' || 'check' }}
         run: |
           mkdir -p logs
-          set -o pipefail
-          python crypto_daily_report.py 2>&1 | tee logs/last_run.log
-          echo "EXIT_CODE=$?" >> logs/last_run.log
+          {
+            echo "=== AMBIENTE ==="
+            echo "Data UTC: $(date -u)"
+            echo "RUN_MODE: ${RUN_MODE}"
+            echo "Event:    ${{ github.event_name }}"
+            echo "Force in: ${{ github.event.inputs.force }}"
+            echo "SHA:      ${{ github.sha }}"
+            echo "=== EXECUÇÃO ==="
+            python crypto_daily_report.py 2>&1
+            echo "=== EXIT_CODE=$? ==="
+          } | tee logs/last_run.log
+          # Captura exit code real do python (PIPESTATUS[0] = primeiro comando do pipe)
+          exit ${PIPESTATUS[0]}
 
       - name: Commitar log + estado
         if: always()
