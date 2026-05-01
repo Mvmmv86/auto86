@@ -1,26 +1,9 @@
 === AMBIENTE ===
-Data UTC: Fri May  1 16:47:11 UTC 2026
+Data UTC: Fri May  1 17:49:05 UTC 2026
 RUN_MODE: check
 Event:    schedule
 Force in: 
-SHA:      63ace5d00c46b0208225ee039d95707712f89b84
+SHA:      30ef293a98a91e67b497ba69ea2b4cdc16e99e5c
 === EXECUÇÃO ===
-⏰ Janela aberta (atual: 16:00 UTC ≥ pico: 16:00 UTC) e ainda não enviou hoje. Rodando.
-🔍 Resolvendo @CoinBureau...
-   ✓ Coin Bureau: 1 vídeo(s) (últimas 24h)
-🔍 Resolvendo @AltcoinDaily...
-   ✓ Altcoin Daily: 1 vídeo(s) (últimas 24h)
-🔍 Resolvendo @IntoTheCryptoverse...
-   ✓ Benjamin Cowen: 1 vídeo(s) (últimas 24h)
-🔍 Resolvendo @cryptobantergroup...
-   ✓ Crypto Banter: 1 vídeo(s) (últimas 24h)
-🔍 Resolvendo @DataDash...
-   ✓ DataDash: 5 vídeo(s) (vídeos mais recentes)
-📤 Enviando email...
-   from: onboarding@resend.dev
-   to:   marcusvmoraes86@gmail.com
-   HTTP 200
-   Body: {"id":"8f7746ee-1ffe-4109-aab0-fe97d9c7a534"}
-✅ Email enviado para marcusvmoraes86@gmail.com.
-📝 Marcado como enviado: 2026-05-01
+⏭️  Já enviado hoje (2026-05-01). Saindo.
 === EXIT_CODE=0 ===
