@@ -1,9 +1,9 @@
 === AMBIENTE ===
-Data UTC: Fri May  1 01:55:45 UTC 2026
+Data UTC: Fri May  1 05:35:34 UTC 2026
 RUN_MODE: check
 Event:    schedule
 Force in: 
-SHA:      31e55b6a2139071832d8a329a9f4d781266ac4b5
+SHA:      b6666b821f2a247f723deafb022800bb8e829dd7
 === EXECUÇÃO ===
-⏭️  Antes do pico (atual: 01:00 UTC, pico: 16:00 UTC). Aguardando.
+⏭️  Antes do pico (atual: 05:00 UTC, pico: 16:00 UTC). Aguardando.
 === EXIT_CODE=0 ===
