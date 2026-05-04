@@ -1,9 +1,9 @@
 === AMBIENTE ===
-Data UTC: Mon May  4 20:57:41 UTC 2026
+Data UTC: Mon May  4 21:56:35 UTC 2026
 RUN_MODE: check
 Event:    schedule
 Force in: 
-SHA:      606c145a403d95e7e2321d2c721f614f0219d5a4
+SHA:      7dfa5c21a1e0f7e932a7d107594232414f962e14
 === EXECUÇÃO ===
 ⏭️  Já enviado hoje (2026-05-04). Saindo.
 === EXIT_CODE=0 ===
