@@ -18,6 +18,7 @@ YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY")
 RESEND_API_KEY  = os.environ.get("RESEND_API_KEY")
 SENDER_EMAIL    = os.environ.get("SENDER_EMAIL", "onboarding@resend.dev")
 RECIPIENT_EMAIL = os.environ.get("RECIPIENT_EMAIL", "marcusvmoraes86@gmail.com")
+EXTRA_RECIPIENTS = ["paulabscrok@gmail.com", "gfvsoares@gmail.com"]
 
 # Modo de execução: "check" (só envia se for hora de pico) ou "force" (envia sempre)
 RUN_MODE = os.environ.get("RUN_MODE", "check")
@@ -291,9 +292,11 @@ def send_email(html_content):
     if not RESEND_API_KEY:
         raise RuntimeError("RESEND_API_KEY não configurada.")
 
+    all_recipients = [RECIPIENT_EMAIL] + EXTRA_RECIPIENTS
+
     print(f"📤 Enviando email...")
     print(f"   from: {SENDER_EMAIL}")
-    print(f"   to:   {RECIPIENT_EMAIL}")
+    print(f"   to:   {', '.join(all_recipients)}")
 
     r = requests.post(
         "https://api.resend.com/emails",
@@ -303,7 +306,7 @@ def send_email(html_content):
         },
         json={
             "from":    SENDER_EMAIL,
-            "to":      [RECIPIENT_EMAIL],
+            "to":      all_recipients,
             "subject": f"🚀 Top Cripto YouTube — {datetime.now().strftime('%d/%m/%Y')}",
             "html":    html_content,
         },
@@ -316,7 +319,7 @@ def send_email(html_content):
     if r.status_code >= 400:
         raise RuntimeError(f"Resend falhou ({r.status_code}): {r.text[:300]}")
 
-    print(f"✅ Email enviado para {RECIPIENT_EMAIL}.")
+    print(f"✅ Email enviado para {', '.join(all_recipients)}.")
 
 
 # ---------- Peak hour gate ----------
