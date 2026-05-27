@@ -1,9 +1,31 @@
 === AMBIENTE ===
-Data UTC: Wed May 27 00:06:46 UTC 2026
+Data UTC: Wed May 27 05:08:17 UTC 2026
 RUN_MODE: check
 Event:    schedule
 Force in: 
-SHA:      f18421a66e3a78009aa7f3cc421362b38947353d
+SHA:      fb2c0e8e5a87e8bac692a3f68424b9d2d43eb967
 === EXECUÇÃO ===
-⏭️  Antes do pico (atual: 00:00 UTC, pico: 01:00 UTC). Aguardando.
-=== EXIT_CODE=0 ===
+⏰ Janela aberta (atual: 05:00 UTC ≥ pico: 01:00 UTC) e ainda não enviou hoje. Rodando.
+🔍 Resolvendo @CoinBureau...
+   ✓ Coin Bureau: 1 vídeo(s) (últimas 24h)
+🔍 Resolvendo @AltcoinDaily...
+   ✓ Altcoin Daily: 2 vídeo(s) (últimas 24h)
+🔍 Resolvendo @IntoTheCryptoverse...
+   ⚠️  Canal @IntoTheCryptoverse não encontrado.
+🔍 Resolvendo @cryptobantergroup...
+   ✓ Crypto Banter: 3 vídeo(s) (últimas 24h)
+🔍 Resolvendo @DataDash...
+   ✓ DataDash: 5 vídeo(s) (vídeos mais recentes)
+📤 Enviando email...
+   from: onboarding@resend.dev
+   to:   marcusvmoraes86@gmail.com, paulabscrok@gmail.com, gfvsoares@gmail.com
+   HTTP 403
+   Body: {"statusCode":403,"name":"validation_error","message":"You can only send testing emails to your own email address (marcusvmoraes86@gmail.com). To send emails to other recipients, please verify a domain at resend.com/domains, and change the `from` address to an email using this domain."}
+Traceback (most recent call last):
+  File "/home/runner/work/auto86/auto86/crypto_daily_report.py", line 450, in <module>
+    main()
+  File "/home/runner/work/auto86/auto86/crypto_daily_report.py", line 442, in main
+    send_email(html_content)
+  File "/home/runner/work/auto86/auto86/crypto_daily_report.py", line 320, in send_email
+    raise RuntimeError(f"Resend falhou ({r.status_code}): {r.text[:300]}")
+RuntimeError: Resend falhou (403): {"statusCode":403,"name":"validation_error","message":"You can only send testing emails to your own email address (marcusvmoraes86@gmail.com). To send emails to other recipients, please verify a domain at resend.com/domains, and change the `from` address to an email using this domain."}
