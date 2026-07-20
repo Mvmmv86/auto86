@@ -1,9 +1,9 @@
 === AMBIENTE ===
-Data UTC: Mon Jul 20 17:19:48 UTC 2026
+Data UTC: Mon Jul 20 17:20:34 UTC 2026
 RUN_MODE: check
 Event:    schedule
 Force in: 
-SHA:      05945fb65815cb7b81a9be078d80f49ec02a2beb
+SHA:      3d27236228019a5e89cd6fbf370d9b3cc3179b25
 === EXECUÇÃO ===
 ⏰ Janela aberta (atual: 17:00 UTC ≥ pico: 00:00 UTC) e ainda não enviou hoje. Rodando.
 🔍 Resolvendo @CoinBureau...
