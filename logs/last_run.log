@@ -1,11 +1,11 @@
 === AMBIENTE ===
-Data UTC: Tue Aug 25 17:21:42 UTC 2026
+Data UTC: Tue Aug 25 18:21:55 UTC 2026
 RUN_MODE: check
 Event:    schedule
 Force in: 
-SHA:      0891b436e26ca72b25a96a14f0e373f0c9c1a614
+SHA:      98df1d444e863aa2bf8713b6ac734c4d3faa0b46
 === EXECUÇÃO ===
-⏰ Janela aberta (atual: 17:00 UTC ≥ pico: 01:00 UTC) e ainda não enviou hoje. Rodando.
+⏰ Janela aberta (atual: 18:00 UTC ≥ pico: 01:00 UTC) e ainda não enviou hoje. Rodando.
 🔍 Resolvendo @CoinBureau...
    ✓ Coin Bureau: 5 vídeo(s) (vídeos mais recentes)
 🔍 Resolvendo @AltcoinDaily...
@@ -13,7 +13,7 @@ SHA:      0891b436e26ca72b25a96a14f0e373f0c9c1a614
 🔍 Resolvendo @IntoTheCryptoverse...
    ⚠️  Canal @IntoTheCryptoverse não encontrado.
 🔍 Resolvendo @cryptobantergroup...
-   ✓ Crypto Banter: 4 vídeo(s) (últimas 24h)
+   ✓ Crypto Banter: 3 vídeo(s) (últimas 24h)
 🔍 Resolvendo @DataDash...
    ✓ DataDash: 5 vídeo(s) (vídeos mais recentes)
 📤 Enviando email...
