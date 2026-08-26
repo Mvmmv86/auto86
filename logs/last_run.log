@@ -1,13 +1,13 @@
 === AMBIENTE ===
-Data UTC: Wed Aug 26 13:43:38 UTC 2026
+Data UTC: Wed Aug 26 14:33:14 UTC 2026
 RUN_MODE: check
 Event:    schedule
 Force in: 
-SHA:      bec83749c22e846eccf5a0545c9a9fded4f05fe8
+SHA:      af00bd8243790575771d53703495d0280e8d963e
 === EXECUÇÃO ===
-⏰ Janela aberta (atual: 13:00 UTC ≥ pico: 01:00 UTC) e ainda não enviou hoje. Rodando.
+⏰ Janela aberta (atual: 14:00 UTC ≥ pico: 01:00 UTC) e ainda não enviou hoje. Rodando.
 🔍 Resolvendo @CoinBureau...
-   ✓ Coin Bureau: 5 vídeo(s) (vídeos mais recentes)
+   ✓ Coin Bureau: 1 vídeo(s) (últimas 24h)
 🔍 Resolvendo @AltcoinDaily...
    ✓ Altcoin Daily: 2 vídeo(s) (últimas 24h)
 🔍 Resolvendo @IntoTheCryptoverse...
