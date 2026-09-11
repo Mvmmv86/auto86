@@ -1,11 +1,11 @@
 === AMBIENTE ===
-Data UTC: Fri Sep 11 15:26:47 UTC 2026
+Data UTC: Fri Sep 11 18:50:42 UTC 2026
 RUN_MODE: check
 Event:    schedule
 Force in: 
-SHA:      1c9204a2e2c1b2337397de89d8e063323fad85fa
+SHA:      e29fa3b06b2b23ab036ea1633e0cbadfd2701ef5
 === EXECUÇÃO ===
-⏰ Janela aberta (atual: 15:00 UTC ≥ pico: 00:00 UTC) e ainda não enviou hoje. Rodando.
+⏰ Janela aberta (atual: 18:00 UTC ≥ pico: 00:00 UTC) e ainda não enviou hoje. Rodando.
 🔍 Resolvendo @CoinBureau...
    ✓ Coin Bureau: 1 vídeo(s) (últimas 24h)
 🔍 Resolvendo @AltcoinDaily...
@@ -15,7 +15,7 @@ SHA:      1c9204a2e2c1b2337397de89d8e063323fad85fa
 🔍 Resolvendo @cryptobantergroup...
    ✓ Crypto Banter: 3 vídeo(s) (últimas 24h)
 🔍 Resolvendo @DataDash...
-   ✓ DataDash: 1 vídeo(s) (últimas 24h)
+   ✓ DataDash: 5 vídeo(s) (vídeos mais recentes)
 📤 Enviando email...
    from: onboarding@resend.dev
    to:   marcusvmoraes86@gmail.com, paulabscrok@gmail.com, gfvsoares@gmail.com
