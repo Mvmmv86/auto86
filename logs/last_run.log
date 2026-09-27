@@ -1,26 +1,26 @@
 === AMBIENTE ===
-Data UTC: Sun Sep 27 15:26:02 UTC 2026
+Data UTC: Sun Sep 27 19:23:24 UTC 2026
 RUN_MODE: check
 Event:    schedule
 Force in: 
-SHA:      7d4bdb4f937c0339718c238302092ff707adbdcf
+SHA:      16b7660dfea047bf0e330e830a8c15746773d16f
 === EXECUÇÃO ===
-⏰ Janela aberta (atual: 15:00 UTC ≥ pico: 03:00 UTC) e ainda não enviou hoje. Rodando.
+⏰ Janela aberta (atual: 19:00 UTC ≥ pico: 02:00 UTC) e ainda não enviou hoje. Rodando.
 🔍 Resolvendo @CoinBureau...
    ✓ Coin Bureau: 2 vídeo(s) (últimas 24h)
 🔍 Resolvendo @AltcoinDaily...
-   ✓ Altcoin Daily: 1 vídeo(s) (últimas 24h)
+   ✓ Altcoin Daily: 5 vídeo(s) (vídeos mais recentes)
 🔍 Resolvendo @IntoTheCryptoverse...
    ⚠️  Canal @IntoTheCryptoverse não encontrado.
 🔍 Resolvendo @cryptobantergroup...
-   ✓ Crypto Banter: 1 vídeo(s) (últimas 24h)
+   ✓ Crypto Banter: 5 vídeo(s) (vídeos mais recentes)
 🔍 Resolvendo @DataDash...
    ✓ DataDash: 5 vídeo(s) (vídeos mais recentes)
 📤 Enviando email...
    from: onboarding@resend.dev
    to:   marcusvmoraes86@gmail.com, paulabscrok@gmail.com, gfvsoares@gmail.com
    HTTP 403
-   Body: {"statusCode":403,"name":"validation_error","message":"You can only send testing emails to your own email address (marcusvmoraes86@gmail.com). To send emails to other recipients, please verify a domain at resend.com/domains, and change the `from` address to an email using this domain."}
+   Body: {"message":"You can only send testing emails to your own email address (marcusvmoraes86@gmail.com). To send emails to other recipients, please verify a domain at resend.com/domains, and change the `from` address to an email using this domain.","name":"validation_error","statusCode":403}
 Traceback (most recent call last):
   File "/home/runner/work/auto86/auto86/crypto_daily_report.py", line 450, in <module>
     main()
@@ -28,4 +28,4 @@ Traceback (most recent call last):
     send_email(html_content)
   File "/home/runner/work/auto86/auto86/crypto_daily_report.py", line 320, in send_email
     raise RuntimeError(f"Resend falhou ({r.status_code}): {r.text[:300]}")
-RuntimeError: Resend falhou (403): {"statusCode":403,"name":"validation_error","message":"You can only send testing emails to your own email address (marcusvmoraes86@gmail.com). To send emails to other recipients, please verify a domain at resend.com/domains, and change the `from` address to an email using this domain."}
+RuntimeError: Resend falhou (403): {"message":"You can only send testing emails to your own email address (marcusvmoraes86@gmail.com). To send emails to other recipients, please verify a domain at resend.com/domains, and change the `from` address to an email using this domain.","name":"validation_error","statusCode":403}
