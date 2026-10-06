@@ -1,15 +1,15 @@
 === AMBIENTE ===
-Data UTC: Mon Oct  5 22:58:16 UTC 2026
+Data UTC: Tue Oct  6 02:40:22 UTC 2026
 RUN_MODE: check
 Event:    schedule
 Force in: 
-SHA:      3ef8eb9f711c2f695714ced7ed1faca5b4ef916a
+SHA:      226486717576a27bac7108bbb2f6ddf2c5e5689f
 === EXECUÇÃO ===
-⏰ Janela aberta (atual: 22:00 UTC ≥ pico: 01:00 UTC) e ainda não enviou hoje. Rodando.
+⏰ Janela aberta (atual: 02:00 UTC ≥ pico: 01:00 UTC) e ainda não enviou hoje. Rodando.
 🔍 Resolvendo @CoinBureau...
    ✓ Coin Bureau: 1 vídeo(s) (últimas 24h)
 🔍 Resolvendo @AltcoinDaily...
-   ✓ Altcoin Daily: 3 vídeo(s) (últimas 24h)
+   ✓ Altcoin Daily: 2 vídeo(s) (últimas 24h)
 🔍 Resolvendo @IntoTheCryptoverse...
    ⚠️  Canal @IntoTheCryptoverse não encontrado.
 🔍 Resolvendo @cryptobantergroup...
