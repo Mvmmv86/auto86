@@ -1,21 +1,21 @@
 === AMBIENTE ===
-Data UTC: Fri Nov  6 16:26:59 UTC 2026
+Data UTC: Fri Nov  6 21:50:49 UTC 2026
 RUN_MODE: check
 Event:    schedule
 Force in: 
-SHA:      bd33dd6ba398fe108d3d38c6a6aef67de2a5cc49
+SHA:      76fa7cb1e7445e12f26394531dd336a2dbfd3883
 === EXECUÇÃO ===
-⏰ Janela aberta (atual: 16:00 UTC ≥ pico: 15:00 UTC) e ainda não enviou hoje. Rodando.
+⏰ Janela aberta (atual: 21:00 UTC ≥ pico: 15:00 UTC) e ainda não enviou hoje. Rodando.
 🔍 Resolvendo @CoinBureau...
-   ✓ Coin Bureau: 1 vídeo(s) (últimas 24h)
+   ✓ Coin Bureau: 2 vídeo(s) (últimas 24h)
 🔍 Resolvendo @AltcoinDaily...
-   ✓ Altcoin Daily: 2 vídeo(s) (últimas 24h)
+   ✓ Altcoin Daily: 1 vídeo(s) (últimas 24h)
 🔍 Resolvendo @IntoTheCryptoverse...
    ⚠️  Canal @IntoTheCryptoverse não encontrado.
 🔍 Resolvendo @cryptobantergroup...
-   ✓ Crypto Banter: 3 vídeo(s) (últimas 24h)
+   ✓ Crypto Banter: 2 vídeo(s) (últimas 24h)
 🔍 Resolvendo @DataDash...
-   ✓ DataDash: 1 vídeo(s) (últimas 24h)
+   ✓ DataDash: 5 vídeo(s) (vídeos mais recentes)
 📤 Enviando email...
    from: onboarding@resend.dev
    to:   marcusvmoraes86@gmail.com, paulabscrok@gmail.com, gfvsoares@gmail.com
