@@ -1,31 +1,9 @@
 === AMBIENTE ===
-Data UTC: Sun Nov 15 22:14:29 UTC 2026
+Data UTC: Mon Nov 16 02:27:56 UTC 2026
 RUN_MODE: check
 Event:    schedule
 Force in: 
-SHA:      8ef857cf0df24d04fe661bfc7ac0abcb13e9894e
+SHA:      c71cd9d0c33fb26842bdd50c3c0a674859653745
 === EXECUÇÃO ===
-⏰ Janela aberta (atual: 22:00 UTC ≥ pico: 15:00 UTC) e ainda não enviou hoje. Rodando.
-🔍 Resolvendo @CoinBureau...
-   ✓ Coin Bureau: 2 vídeo(s) (últimas 24h)
-🔍 Resolvendo @AltcoinDaily...
-   ✓ Altcoin Daily: 5 vídeo(s) (vídeos mais recentes)
-🔍 Resolvendo @IntoTheCryptoverse...
-   ⚠️  Canal @IntoTheCryptoverse não encontrado.
-🔍 Resolvendo @cryptobantergroup...
-   ✓ Crypto Banter: 5 vídeo(s) (vídeos mais recentes)
-🔍 Resolvendo @DataDash...
-   ✓ DataDash: 5 vídeo(s) (vídeos mais recentes)
-📤 Enviando email...
-   from: onboarding@resend.dev
-   to:   marcusvmoraes86@gmail.com, paulabscrok@gmail.com, gfvsoares@gmail.com
-   HTTP 403
-   Body: {"message":"You can only send testing emails to your own email address (marcusvmoraes86@gmail.com). To send emails to other recipients, please verify a domain at resend.com/domains, and change the `from` address to an email using this domain.","name":"validation_error","statusCode":403}
-Traceback (most recent call last):
-  File "/home/runner/work/auto86/auto86/crypto_daily_report.py", line 450, in <module>
-    main()
-  File "/home/runner/work/auto86/auto86/crypto_daily_report.py", line 442, in main
-    send_email(html_content)
-  File "/home/runner/work/auto86/auto86/crypto_daily_report.py", line 320, in send_email
-    raise RuntimeError(f"Resend falhou ({r.status_code}): {r.text[:300]}")
-RuntimeError: Resend falhou (403): {"message":"You can only send testing emails to your own email address (marcusvmoraes86@gmail.com). To send emails to other recipients, please verify a domain at resend.com/domains, and change the `from` address to an email using this domain.","name":"validation_error","statusCode":403}
+⏭️  Antes do pico (atual: 02:00 UTC, pico: 15:00 UTC). Aguardando.
+=== EXIT_CODE=0 ===
